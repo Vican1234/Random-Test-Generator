@@ -1,4 +1,5 @@
 package randomTestGenerator;
+
 import java.awt.*;
 
 import javax.swing.JFrame;
@@ -9,9 +10,19 @@ import javax.swing.JLabel;
 
 public class generatorDisplay extends JFrame{
 	
-	private JLabel testResults;
+	private JLabel intTest;
+	private JLabel floatTest;
+	private JLabel longTest;
+	private JLabel doubleTest;
+	private JLabel charTest;
+	private JLabel stringTest;
 	
 	
+	public generatorDisplay() {
+		JFrame randomTests = new JFrame("Generated Tests");
+		randomTests.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		randomTests.setSize(500,500);
+	}
 	
 
 }
