@@ -1,4 +1,3 @@
-package randomTestGenerator;
 import java.util.Random;
 
 
@@ -136,7 +135,7 @@ public class randomTest {
 		// returns the char
 		return charTests[wordPosition];
 	}
-	
+
 	public String createStringTest()
 	{
 		// limit set for array size

@@ -1,5 +1,3 @@
-package randomTestGenerator;
-
 import java.awt.*;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,7 +12,7 @@ public class generatorDisplay extends JFrame{
 	
 	public generatorDisplay(String title) {
 		super(title);
-		getContentPane().setLayout(new ());
+		//getContentPane().setLayout(new ());
 	}
 	
 
