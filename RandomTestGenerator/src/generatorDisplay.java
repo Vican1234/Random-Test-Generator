@@ -11,7 +11,7 @@ public class generatorDisplay extends JFrame{
 	
 	
 	public generatorDisplay(String title) {
-		super(title);
+		//
 		//getContentPane().setLayout(new ());
 	}
 	

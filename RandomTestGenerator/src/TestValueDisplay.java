@@ -21,15 +21,22 @@ public class TestValueDisplay extends JFrame{
     private JLabel jlDouble;
     private JLabel jlFloat;
     private JLabel jlLong;
+    private int width;
+    private int height;
 
-    public TestValueDisplay() {
+    public TestValueDisplay(int w, int h) {
+        width = w;
+        height = h;
+    }
+
+    public void TestDisplay(){
+
+        setSize(width,height);
         setContentPane(testDisplay);
-       setTitle("Generated Tests");
-       setDefaultCloseOperation(EXIT_ON_CLOSE);
-       setSize(500,500);
-       setLocationRelativeTo(null);
-       setVisible(true);
-       randomTest createData = new randomTest();
+        setTitle("Generated Tests");
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setVisible(true);
+        randomTest createData = new randomTest();
         generateTestsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -43,8 +50,4 @@ public class TestValueDisplay extends JFrame{
             }
         });
     }
-
-   public static void main(String[] args){
-       new TestValueDisplay();
-   }
 }
