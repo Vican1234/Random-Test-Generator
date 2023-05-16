@@ -1,1 +1,1 @@
-java -RandomTestGenerator.jar
+C:\Users\CILL1\.jdks\openjdk-20.0.1\bin\java.exe -Dfile.encoding=windows-1252 -jar "C:\Users\CILL1\Documents\Random test Generator\RandomTestGenerator\out\artifacts\RandomTestGenerator_jar\RandomTestGenerator.jar"
