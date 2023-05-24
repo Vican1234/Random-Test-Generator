@@ -1,3 +1,5 @@
+package src;
+
 public class exampleCalculator {
 
     public int additon(int valOne, int valTwo){

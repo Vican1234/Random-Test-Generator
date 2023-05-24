@@ -1,3 +1,5 @@
+package src;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,6 +23,7 @@ public class TestValueDisplay extends JFrame{
     private JLabel jlDouble;
     private JLabel jlFloat;
     private JLabel jlLong;
+    private JButton findFileForTestingButton;
     private int width;
     private int height;
 
@@ -48,6 +51,10 @@ public class TestValueDisplay extends JFrame{
                 TestDataFloat.setText(String.valueOf(createData.createFloatTest()));
                 TestDataLong.setText(String.valueOf(createData.createLongTest()));
             }
+
+
         });
+
+
     }
 }

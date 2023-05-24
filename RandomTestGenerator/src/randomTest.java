@@ -1,6 +1,14 @@
+package src;
+import java.net.URL;
 import java.util.Random;
 
 import java.lang.reflect.*;
+import java.lang.reflect.Method;
+import java.lang.reflect.InvocationTargetException;
+
+import java.net.URLClassLoader;
+
+import java.io.IOException;
 
 //Author 			: Cillían Vickers
 //Date 			    : April-2023
@@ -12,7 +20,6 @@ public class randomTest {
 	// variables holds for tests
 		int intTest;
 		float floatTest;
-		long longTest;
 		double doubleTest;
 
 	public int createIntTest()
@@ -33,22 +40,15 @@ public class randomTest {
 		float maxFloat = 9999.99f;
 		
 		// generating a random number
-		floatTest = randTest.nextFloat(maxFloat);
-		
+		floatTest = randTest.nextFloat();
+		floatTest = floatTest*maxFloat;
 		// returns the value
 		return floatTest;
 	}
 	
 	public long createLongTest()
 	{
-		// to set the max value for the random number
-		long maxLong = 9999;
-		
-		// generating a random number
-		longTest = randTest.nextLong(maxLong);
-		
-		// returns the value
-		return longTest;
+		return Long.valueOf(createIntTest());
 	}
 	
 	public double createDoubleTest()
@@ -57,8 +57,8 @@ public class randomTest {
 		double maxDouble = 9999.99;
 		
 		// generating a random number
-		doubleTest = randTest.nextDouble(maxDouble);
-		
+		doubleTest = randTest.nextDouble();
+		doubleTest = doubleTest*maxDouble;
 		// returns the value
 		return doubleTest;
 		
@@ -87,6 +87,35 @@ public class randomTest {
 		}
 
 		return randomString.toString();
+	}
+
+	public static void StringTestMethod(Object classIn, String methodIn){
+		try {
+			Class<?> testingClass = classIn.getClass();
+			Method testingMethod = testingClass.getDeclaredMethod(methodIn);
+			testingMethod.setAccessible(true);
+			testingMethod.invoke(classIn);
+		}
+		catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e){
+			e.printStackTrace();
+		}
+	}
+
+	public static void TestMethod(String fileLocation){
+
+		URLClassLoader testFile = URLClassLoader.newInstance(new URL[]{fileLocation.toURI().toURL()});
+	}
+	public static void fileOpener(String fileLocation)
+	{
+		String codeTest = fileLocation;
+		try{
+			ProcessBuilder fileBuild = new ProcessBuilder("java", "-jar", codeTest);
+			Process process = fileBuild.start();
+			process.waitFor();
+		}
+		catch(IOException | InterruptedException e){
+			e.printStackTrace();
+		}
 	}
 
 }
